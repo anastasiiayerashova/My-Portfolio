@@ -1,6 +1,6 @@
 
 
-export default function Header() {
+export default function Header({setIsOpen}) {
     return (
          <header className="header">
       <a href="#home" className="logo">
@@ -15,10 +15,10 @@ export default function Header() {
         </nav>
         <button className="gradient-btn">Contact Me</button>
 
-       <button className="mob-open-btn" type="button" id="menu-open-btn">
+       <button className="mob-open-btn" type="button" id="menu-open-btn" onClick={() => setIsOpen(true)}>
         <span className="visually-hidden">Open menu</span>
         <svg className="mob-open-btn-icon" width="32" height="32">
-          <use href="src/img/icons.svg#icon-menu"></use>
+          <use href="/src/img/icons.svg#icon-menu"></use>
                 </svg>
                 </button>
       

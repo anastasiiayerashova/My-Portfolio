@@ -1,19 +1,31 @@
+import { motion } from "framer-motion"
 
+const textAnimation = {
+    hidden: { 
+        scale: 0.5, 
+        opacity: 0 
+    },
+    visible: custom => ({
+        scale: 1,
+        opacity: 1,
+        transition: { delay: custom * 0.2, duration: 0.4 }
+    })
+};
 
 export default function Home() {
     return (
           <section className="home" id="home">
       <div className="home-content">
-        <h1>Hi, It's <span>Anastasia</span></h1>
-        <h3>I'm a&nbsp;<span>Full-Stack Developer</span></h3>
-        <p>
+        <motion.h1 variants={textAnimation} initial='hidden' animate='visible' custom={1}>Hi, It's <span>Anastasia</span></motion.h1>
+        <motion.h3 custom={2} variants={textAnimation} initial='hidden' animate='visible' >I'm a&nbsp;<span>Full-Stack Developer</span></motion.h3>
+        <motion.p custom={3} variants={textAnimation} initial='hidden' animate='visible'>
           Inspired and detail-oriented Front-End Developer skilled in HTML, CSS,
           JavaScript, and React. I specialize in creating user-friendly web
           development projects with a focus on Agile/Scrum and value teamwork,
           adaptability, and continuous learning. A fast learner and
           problem-solver, I am committed to delivering impactful and efficient
           solutions
-        </p>
+        </motion.p>
         <div className="social-icons">
           <a href="https://github.com/anastasiiayerashova" target="_blank">
             <i className="bx bxl-github"></i>
