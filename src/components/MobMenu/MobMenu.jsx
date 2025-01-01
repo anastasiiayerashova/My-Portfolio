@@ -15,16 +15,25 @@ const variantsOverlay = {
 const variantsMenu = {
   initial: {
     x: "100%", 
+    opacity: 0,
   },
   animate: {
     x: 0, 
+    opacity: 1,
+    transition: {
+    type: "tween", 
+    duration: 0.05, 
+    ease: "linear", 
+    },
   },
   exit: {
-    x: "-100%", 
-  },
-  transition: {
-    duration: 0.05, 
-    ease: "easeInOut", 
+    x: "100%", 
+    opacity: 0,
+    transition: {
+      type: "tween", 
+      duration: 0.05,
+      ease: "linear",
+    },
   },
 };
 
@@ -35,13 +44,11 @@ export default function MobMenu({ isOpen, setIsOpen }) {
             variants={variantsOverlay}
             initial='initial'
             animate="animate"
-            exit="exit"
-            transition={{duration: 0.05}}>
+            exit="exit">
             <motion.div className={`mob-menu ${isOpen ? "active" : ""}`} id="mobile-menu" onClick={(e) => e.stopPropagation()}
                 variants={variantsMenu} initial='initial'
                 animate='animate'
-                exit='exit'
-                transition={variantsMenu.transition}>
+                exit='exit'>
                <nav className="mob-menu-nav">
                     <a href="#home" className="logo logo-mob">Anastasia&nbsp;<span>Yerashova</span></a>
                     <button className="mob-menu-close-btn" id="menu-close-btn" onClick={() => setIsOpen(false)}>

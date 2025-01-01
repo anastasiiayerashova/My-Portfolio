@@ -26,7 +26,7 @@ export default function About() {
                 user-friendly applications. I enjoy learning new technologies and staying
                 up-to-date with industry trends to continuously improve my skills.
         </motion.p>
-        <button className="button" onClick={handleToggle}>{showText ? 'Hide' : 'Read more'}</button>
+        <button className="button about-button" onClick={handleToggle}>{showText ? 'Hide' : 'Read more'}</button>
       </motion.div>
     </section>
     )

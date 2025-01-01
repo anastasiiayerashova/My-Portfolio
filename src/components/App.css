@@ -103,12 +103,32 @@ section {
   font-weight: 500;
   line-height: 1.8;
 }
-
+/* 
 .home-img img {
   width: 32vw;
   border-radius: 50%;
   box-shadow: 0 0 25px var(--main-color);
   transition: 0.3s ease-in-out;
+} */
+
+.home-img img {
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  animation: pulse-shadow 3s infinite ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 25px var(--main-color);
+  }
+  50% {
+    box-shadow: 0 0 50px var(--main-color), 0 0 75px var(--main-color);
+  }
+  100% {
+    box-shadow: 0 0 25px var(--main-color);
+  }
 }
 
 .home-img img:hover {
@@ -205,6 +225,10 @@ section {
 
 .about-content .btn {
   margin: 3rem 0;
+}
+
+.about-button {
+  margin-top: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -418,7 +442,7 @@ section {
 
 .logo-mob {
   margin-top: 30px;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .mob-menu-overlay {

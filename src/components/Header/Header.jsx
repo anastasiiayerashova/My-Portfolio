@@ -13,7 +13,7 @@ return (
        <a href="#contact" className="gradient-btn">Contact Me</a>
        <button className="mob-open-btn" type="button" id="menu-open-btn" onClick={() => setIsOpen(true)}>
        <span className="visually-hidden">Open menu</span>
-        <svg className="mob-open-btn-icon" width="32" height="32">
+        <svg className="mob-open-btn-icon" width="29" height="29">
           <use href="/img/icons.svg#icon-menu"></use>
         </svg>
         </button>
