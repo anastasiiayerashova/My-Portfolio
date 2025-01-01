@@ -8,7 +8,7 @@ export default function About() {
     return (
     <section className="about" id="about">
       <div className="about-img">
-        <img src="/src/img/home-img.jpg" alt="Anastasia Yerashova" />
+        <img src="/img/home-img.jpg" alt="Anastasia Yerashova" />
       </div>
       <motion.div className="about-content" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: 'easeOut' }}>
         <h2>About <span>Me</span></h2>

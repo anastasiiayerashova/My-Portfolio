@@ -36,7 +36,7 @@ export default function Contact({handleOpenModal}) {
         
         return isValid ? (
             <svg className="work-success-icon" width="16" height="16">
-                        <use href="/src/img/icons.svg#icon-ack"></use>
+                        <use href="/img/icons.svg#icon-ack"></use>
                       </svg>
         ) : null
     }
@@ -54,13 +54,13 @@ export default function Contact({handleOpenModal}) {
         <motion.ul className="work-list" variants={variants} custom={3} initial='hidden' whileInView='visible' viewport={{ once: true }}>
           <li className="work-item">
            <svg className="work-icon" width="24" height="24">
-            <use href="/src/img/icons.svg#icon-mail"></use>
+            <use href="/img/icons.svg#icon-mail"></use>
            </svg>
            <a className="work-link" href="mailto:yerashova.a@gmail.com">yerashova.a@gmail.com</a>
          </li>
          <li className="work-item">
           <svg className="work-icon" width="24" height="24">
-            <use href="/src/img/icons.svg#icon-map"></use>
+            <use href="/img/icons.svg#icon-map"></use>
           </svg>
           <a className="work-link" href="https://www.google.com/maps?q=Seville,+Spain" target="_blank">Seville, Spain</a>
          </li>

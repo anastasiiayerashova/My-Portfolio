@@ -14,7 +14,7 @@ return (
        <button className="mob-open-btn" type="button" id="menu-open-btn" onClick={() => setIsOpen(true)}>
        <span className="visually-hidden">Open menu</span>
         <svg className="mob-open-btn-icon" width="32" height="32">
-          <use href="/src/img/icons.svg#icon-menu"></use>
+          <use href="/img/icons.svg#icon-menu"></use>
         </svg>
         </button>
     </header>

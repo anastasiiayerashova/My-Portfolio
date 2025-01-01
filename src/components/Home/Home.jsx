@@ -44,7 +44,7 @@ return (
         </div>
       </div>
       <div className="home-img">
-        <img src="/src/img/home-img.jpg" alt="Anastasia Yerashova" />
+        <img src="/img/home-img.jpg" alt="Anastasia Yerashova" />
       </div>
     </section>
     )

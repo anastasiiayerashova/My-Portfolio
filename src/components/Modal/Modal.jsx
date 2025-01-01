@@ -5,7 +5,7 @@ return (
         <div className="work-modal">
              <button className="work-modal-close" onClick={handleCloseModal}>
               <svg className="work-icon-close" width="24" height="24">
-               <use href="/src/img/icons.svg#icon-close"></use>
+               <use href="/img/icons.svg#icon-close"></use>
               </svg>
             </button>
             <h3 className="work-modal-title">thank you for your interest in cooperation!</h3>

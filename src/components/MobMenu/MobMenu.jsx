@@ -47,7 +47,7 @@ export default function MobMenu({ isOpen, setIsOpen }) {
                     <button className="mob-menu-close-btn" id="menu-close-btn" onClick={() => setIsOpen(false)}>
                     <span className="visually-hidden">Close menu</span>
                       <svg className="mob-menu-close-btn-icon" width="32" height="32">
-                       <use href="/src/img/icons.svg#icon-close"></use>
+                       <use href="/img/icons.svg#icon-close"></use>
                       </svg>
                     </button>
                </nav>
