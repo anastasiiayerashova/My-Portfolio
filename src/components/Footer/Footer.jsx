@@ -15,9 +15,6 @@ return (
       </div>
       <ul className="list">
             <li>
-              <a href="#about">FAQ</a>
-            </li>
-            <li>
               <a href="#services">Services</a>
             </li>
             <li>
