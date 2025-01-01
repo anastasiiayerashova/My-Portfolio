@@ -291,7 +291,7 @@ section {
 
 .projects-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
   place-items: center;
   gap: 3rem;
   row-gap: 5rem;
@@ -416,7 +416,7 @@ section {
 
 .logo-mob {
   margin-top: 30px;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .mob-menu-overlay {
@@ -524,6 +524,11 @@ section {
   .gradient-btn {
     display: block;
     margin-left: 20px;
+  }
+
+  .projects-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
 
