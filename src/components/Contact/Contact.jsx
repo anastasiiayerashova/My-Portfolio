@@ -1,4 +1,7 @@
 import { motion } from "framer-motion"
+import { Formik, Form, Field, ErrorMessage, useFormikContext } from "formik";
+import { useId } from "react";
+import * as Yup from "yup";
 
 const variants = {
     visible: (custom) => ({
@@ -9,73 +12,75 @@ const variants = {
     hidden: { opacity: 0, y: 50 },
   };
 
-export default function Contact() {
+export default function Contact({handleOpenModal}) {
+    const emailId = useId()
+    const msgId = useId()
+
+    const initialValues = {
+        email: '',
+        message: ''
+    }
+
+    const FeedbackScheme = Yup.object().shape({
+    email: Yup.string().email('Invalid email format').required('Required'),
+    message: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!')
+    })
+    
+    const handleSubmit = (values, actions) => {
+        actions.resetForm()
+    }
+
+    function SuccesIcon ({ name }) {
+        const { errors, touched } = useFormikContext()
+        const isValid = touched[name] && !errors[name]
+        
+        return isValid ? (
+            <svg className="work-success-icon" width="16" height="16">
+                        <use href="/src/img/icons.svg#icon-ack"></use>
+                      </svg>
+        ) : null
+    }
+
     return (
-        <section id="contact" className="section">
-  <div className="container work-wrapper">
-    <div className="work-left">
-      <motion.h2 className="work-title" variants={variants} custom={1} initial='hidden' whileInView='visible' viewport={{ once: true }}>
-        Let's<span> work together</span>
-      </motion.h2>
-      <span className="work-bg"></span>
-      <motion.p className="work-text" variants={variants} custom={2} initial='hidden' whileInView='visible' viewport={{ once: true }}>
+    <section id="contact" className="section">
+      <div className="container work-wrapper">
+       <div className="work-left">
+        <motion.h2 className="work-title" variants={variants} custom={1} initial='hidden' whileInView='visible' viewport={{ once: true }}>
+          Let's<span> work together</span>
+        </motion.h2>
+        <motion.p className="work-text" variants={variants} custom={2} initial='hidden' whileInView='visible' viewport={{ once: true }}>
         contact me to transform your ideas into exceptional solutions.
-      </motion.p>
-      <motion.ul className="work-list" variants={variants} custom={3} initial='hidden' whileInView='visible' viewport={{ once: true }}>
-        <li className="work-item">
-          <svg className="work-icon" width="24" height="24">
-            <use href="/src/img/icons.svg#icon-phone"></use>
-          </svg>
-          <a className="work-link" href="tel:+380904567890">+38 090 456 78 90</a>
-        </li>
-        <li className="work-item">
-          <svg className="work-icon" width="24" height="24">
+        </motion.p>
+        <motion.ul className="work-list" variants={variants} custom={3} initial='hidden' whileInView='visible' viewport={{ once: true }}>
+          <li className="work-item">
+           <svg className="work-icon" width="24" height="24">
             <use href="/src/img/icons.svg#icon-mail"></use>
-          </svg>
-          <a className="work-link" href="mailto:lloydjefferson@gmail.com"
-            >yerashova.a@gmail.com</a
-          >
-        </li>
-        <li className="work-item">
+           </svg>
+           <a className="work-link" href="mailto:yerashova.a@gmail.com">yerashova.a@gmail.com</a>
+         </li>
+         <li className="work-item">
           <svg className="work-icon" width="24" height="24">
             <use href="/src/img/icons.svg#icon-map"></use>
           </svg>
-          <a className="work-link" href="https://www.google.com/maps?q=New+York,+USA" target="_blank">Seville, Spain</a>
-        </li>
-      </motion.ul>
-    </div>
-    <motion.div className="work-right" variants={variants} custom={4} initial='hidden' whileInView='visible' viewport={{ once: true }}>
-      <form className="work-form" noValidate>
-        <input
-          className="work-input"
-          type="email"
-          name="email"
-          placeholder="Your email*"
-          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-          id="email"
-          required
-        />
-        <label htmlFor="email" className="visually-hidden">Email</label>
-        <svg className="work-success-icon" width="16" height="16">
-          <use href="./img/icons.svg#icon-ack"></use>
-        </svg>
-        <p className="error-input js-error">Invalid email, try again</p>
-        <textarea
-          className="work-message"
-          placeholder="Message"
-          name="message"
-          id="message"
-        ></textarea>
-        <label htmlFor="message" className="visually-hidden">Message</label>
-        <p className="error-input-msg js-error">All fields must be filled</p>
-        <button type="submit" className="work-btn gradient-btn" data-bs-toggle="modal"
-  data-bs-target="#workModal">send message</button>
-      </form>
-      <span className="work-loader visually-hidden"></span>
-                </motion.div>
-                </div>
-
-   
+          <a className="work-link" href="https://www.google.com/maps?q=Seville,+Spain" target="_blank">Seville, Spain</a>
+         </li>
+        </motion.ul>
+       </div>
+        <motion.div className="work-right" variants={variants} custom={4} initial='hidden' whileInView='visible' viewport={{ once: true }}>
+           <Formik initialValues={initialValues} validationSchema={FeedbackScheme} onSubmit={handleSubmit}>
+                <Form className="work-form">
+                    <label htmlFor={emailId} className="visually-hidden">Email</label>
+                     <Field type='email' name='email' id={emailId} placeholder="Your email*" className="work-input"/>
+                       <SuccesIcon name='email'/>
+                       <ErrorMessage name='email' component='span' className='error-message'></ErrorMessage>
+                    <label htmlFor={msgId} className="visually-hidden">Email</label>
+                     <Field as='textarea' type='text' name='message' id={msgId} placeholder="Your message" className="work-message" />
+                       <ErrorMessage name='message' component='span' className='error-message'></ErrorMessage>
+                    <button type="submit" className="work-btn gradient-btn" onClick={handleOpenModal}>Send message</button>        
+                </Form>  
+            </Formik>
+    </motion.div>
+  </div>
 </section>
     )
 }

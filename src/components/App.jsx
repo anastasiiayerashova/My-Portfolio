@@ -9,12 +9,16 @@ import { getData } from '../api'
 import Contact from './Contact/Contact'
 import Footer from './Footer/Footer'
 import MobMenu from './MobMenu/MobMenu'
-import { motion, AnimatePresence } from 'framer-motion'
-
+import { AnimatePresence } from 'framer-motion'
+import Modal from './Modal/Modal'
 
 export default function App() {
   const [data, setData] = useState([])
   const [isOpen, setIsOpen] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+
+  const handleCloseModal = () => setShowModal(false)
+  const handleOpenModal = () => setShowModal(true)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,10 +40,9 @@ export default function App() {
         <About />
         <Services />
         <Projects data={data} />
-        <Contact />
-        <Footer/>
+        <Contact handleOpenModal={handleOpenModal} />
+        <Footer />
+        {showModal && <Modal handleCloseModal={handleCloseModal} />}
       </>
   )
 }
-
-

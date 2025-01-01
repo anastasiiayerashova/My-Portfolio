@@ -7,6 +7,10 @@
   font-family: "Poppins", serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   --bg-color: #080808;
   --second-bg-color: #101010;

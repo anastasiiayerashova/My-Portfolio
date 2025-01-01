@@ -142,7 +142,7 @@ section {
   gap: 1.5rem;
 }
 
-.btn {
+.button {
   display: inline-block;
   padding: 1rem 3rem;
   background-color: var(--main-color);
@@ -156,7 +156,7 @@ section {
   margin-top: auto;
 }
 
-.btn:hover {
+.button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
@@ -201,24 +201,6 @@ section {
 
 .about-content p {
   font-size: 1.7rem;
-}
-
-.more-text {
-  opacity: 0;
-  transform: translateY(20px);
-  display: none;
-  transition: opacity 0.8s, transform 0.8s;
-}
-
-.more-text.visible {
-  opacity: 1;
-  display: inline-block;
-  transform: translateY(0);
-}
-
-.more-text.hidden {
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .about-content .btn {
@@ -580,20 +562,6 @@ section {
   }
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  display: none;
-}
-
 .is-active {
   visibility: visible;
   opacity: 1;
@@ -632,6 +600,7 @@ section {
   flex-direction: column;
   gap: 16px;
   margin-bottom: 40px;
+  padding-left: 0;
 }
 
 .work-item {
@@ -652,17 +621,12 @@ section {
   line-height: 24px;
   font-weight: 300;
   color: var(--text);
-  transition: 0.3s ease;
-}
-
-.work-link:hover,
-.work-link:focus {
-  color: var(--accent-green);
 }
 
 .work-form {
   display: grid;
   position: relative;
+  gap: 10px;
 }
 
 .work-input,
@@ -683,15 +647,14 @@ section {
 .work-message {
   height: 128px;
   padding: 16px;
-  margin-bottom: 32px;
 }
 
 .work-input {
   padding: 12px 0 12px 16px;
-  margin-bottom: 32px;
 }
 
 .work-btn {
+  margin-top: 32px;
   display: block;
   border: none;
   outline: none;
@@ -709,46 +672,6 @@ section {
   font-family: "Poppins", sans-serif;
 }
 
-/*----- Loader -----*/
-
-.work-loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  position: fixed;
-  border-top: 4px solid #fff;
-  border-right: 4px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.work-loader::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border-left: 4px solid #00b068;
-  border-bottom: 4px solid transparent;
-  animation: rotation 0.5s linear infinite reverse;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*----- Modal window -----*/
 
 .work-backdrop {
@@ -759,7 +682,8 @@ section {
   width: 100%;
   height: 100%;
   transition: all 0.3s ease;
-  background-color: var(--background-work-together-backdrop);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
 }
 
 .work-modal {
@@ -771,8 +695,8 @@ section {
   width: 320px;
   padding: 48px 32px;
   border-radius: 16px;
-  border: 1px solid var(--light-grey);
-  background-color: var(--white);
+  border: 1px solid var(--bg-color);
+  background-color: var(--second-bg-color);
 }
 
 .work-modal-close {
@@ -786,7 +710,7 @@ section {
 }
 
 .work-icon-close {
-  stroke: var(--text);
+  stroke: var(--text-color);
   fill: none;
   transition: all 0.3s ease;
 }
@@ -797,7 +721,9 @@ section {
 
 .work-modal-title {
   text-transform: uppercase;
-  color: var(--accent-green);
+  background: linear-gradient(to right, #00fff7, #ff00f7);
+  background-clip: text;
+  color: transparent;
   font-size: 18px;
   letter-spacing: 0.5px;
   line-height: 28px;
@@ -807,7 +733,7 @@ section {
 }
 
 .work-modal-text {
-  color: var(--text);
+  color: var(--text-color);
   font-size: 16px;
   letter-spacing: 0.2px;
   line-height: 24px;
@@ -818,19 +744,6 @@ section {
 @media only screen and (min-width: 768px) {
   .work-wrapper {
     position: relative;
-  }
-
-  .work-bg {
-    position: absolute;
-    background-image: -webkit-image-set(
-      url(../img/background/decor-bg7.avif) 1x,
-      url(../img/background/decor-bg7-2x.avif) 2x
-    );
-    top: -85px;
-    right: 50px;
-    width: 336px;
-    height: 260px;
-    background-repeat: no-repeat;
   }
 
   .work-title {
@@ -877,16 +790,6 @@ section {
     justify-content: space-between;
   }
 
-  .work-bg {
-    background-image: -webkit-image-set(
-      url(../img/background/decor-bg3.avif) 1x,
-      url(../img/background/decor-bg3-2x.avif) 2x
-    );
-    top: -110px;
-    width: 526px;
-    height: 408px;
-  }
-
   .work-title {
     max-width: 511px;
     margin-bottom: 80px;
@@ -913,25 +816,9 @@ section {
 }
 
 .work-success-icon {
-  fill: var(--accent-green);
+  fill: var(--main-color);
   position: absolute;
   right: 17px;
   top: 17px;
-  display: none;
-}
-
-.error-input,
-.error-input-msg {
-  font-weight: 300;
-  color: #e74a3b;
-  letter-spacing: 0.2px;
-  font-size: 12px;
-  line-height: 24px;
-  margin-top: -32px;
-  display: none;
-}
-
-.work-loader {
-  top: 65%;
-  left: 50%;
+  display: block;
 }

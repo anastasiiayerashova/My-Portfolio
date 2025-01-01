@@ -1,11 +1,8 @@
-
-
-export default function Header({setIsOpen}) {
-    return (
-         <header className="header">
-      <a href="#home" className="logo">
-        Anastasia&nbsp;<span>Yerashova</span>
-      </a>
+export default function Header({ setIsOpen }) {
+    
+return (
+    <header className="header">
+      <a href="#home" className="logo">Anastasia&nbsp;<span>Yerashova</span></a>
         <nav className="navbar">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -13,15 +10,13 @@ export default function Header({setIsOpen}) {
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button className="gradient-btn">Contact Me</button>
-
+       <a href="#contact" className="gradient-btn">Contact Me</a>
        <button className="mob-open-btn" type="button" id="menu-open-btn" onClick={() => setIsOpen(true)}>
-        <span className="visually-hidden">Open menu</span>
+       <span className="visually-hidden">Open menu</span>
         <svg className="mob-open-btn-icon" width="32" height="32">
           <use href="/src/img/icons.svg#icon-menu"></use>
-                </svg>
-                </button>
-      
+        </svg>
+        </button>
     </header>
     )
 }

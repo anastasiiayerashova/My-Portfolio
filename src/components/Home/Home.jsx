@@ -13,8 +13,9 @@ const textAnimation = {
 };
 
 export default function Home() {
-    return (
-          <section className="home" id="home">
+
+return (
+    <section className="home" id="home">
       <div className="home-content">
         <motion.h1 variants={textAnimation} initial='hidden' animate='visible' custom={1}>Hi, It's <span>Anastasia</span></motion.h1>
         <motion.h3 custom={2} variants={textAnimation} initial='hidden' animate='visible' >I'm a&nbsp;<span>Full-Stack Developer</span></motion.h3>
@@ -24,16 +25,13 @@ export default function Home() {
           development projects with a focus on Agile/Scrum and value teamwork,
           adaptability, and continuous learning. A fast learner and
           problem-solver, I am committed to delivering impactful and efficient
-          solutions
-        </motion.p>
+          solutions</motion.p>
         <div className="social-icons">
           <a href="https://github.com/anastasiiayerashova" target="_blank">
             <i className="bx bxl-github"></i>
           </a>
           <a
-            href="https://www.linkedin.com/in/anastasia-yerashova/"
-            target="_blank"
-          >
+            href="https://www.linkedin.com/in/anastasia-yerashova/" target="_blank">
             <i className="bx bxl-linkedin-square"></i>
           </a>
           <a href="https://djinni.co/q/a23ba9b3c9/" target="_blank">
@@ -41,11 +39,10 @@ export default function Home() {
           </a>
         </div>
         <div className="btn-group">
-          <a href="#" className="btn">Hire</a>
-          <a href="#contact" className="btn">Contact</a>
+          <a href="#contact" className="button">Hire</a>
+          <a href="#contact" className="button">Contact</a>
         </div>
       </div>
-
       <div className="home-img">
         <img src="/src/img/home-img.jpg" alt="Anastasia Yerashova" />
       </div>

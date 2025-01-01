@@ -29,6 +29,7 @@ const variantsMenu = {
 };
 
 export default function MobMenu({ isOpen, setIsOpen }) {
+
     return (
         <motion.div className={`mob-menu-overlay ${isOpen ? "active" : ""}`} onClick={() => setIsOpen(false)}
             variants={variantsOverlay}
@@ -41,30 +42,27 @@ export default function MobMenu({ isOpen, setIsOpen }) {
                 animate='animate'
                 exit='exit'
                 transition={variantsMenu.transition}>
-    <nav className="mob-menu-nav">
-      <a href="#home" className="logo logo-mob">
-        Anastasia&nbsp;<span>Yerashova</span>
-      </a>
-      <button className="mob-menu-close-btn" id="menu-close-btn" onClick={() => setIsOpen(false)}>
-        <span className="visually-hidden">Close menu</span>
-        <svg className="mob-menu-close-btn-icon" width="32" height="32">
-          <use href="/src/img/icons.svg#icon-close"></use>
-        </svg>
-      </button>
-    </nav>
-
-    <ul className="mob-nav-list ">
-      <li className="mob-nav-item">
-        <a className="mob-nav-link" href="#about" onClick={() => setIsOpen(false)}>About Me</a>
-      </li>
-      <li className="mob-nav-item">
-        <a className="mob-nav-link" href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
-      </li>
-      <li className="mob-nav-item">
-        <a className="mob-nav-link" href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
-      </li>
-    </ul>
-  </motion.div>
- </motion.div>
+               <nav className="mob-menu-nav">
+                    <a href="#home" className="logo logo-mob">Anastasia&nbsp;<span>Yerashova</span></a>
+                    <button className="mob-menu-close-btn" id="menu-close-btn" onClick={() => setIsOpen(false)}>
+                    <span className="visually-hidden">Close menu</span>
+                      <svg className="mob-menu-close-btn-icon" width="32" height="32">
+                       <use href="/src/img/icons.svg#icon-close"></use>
+                      </svg>
+                    </button>
+               </nav>
+               <ul className="mob-nav-list ">
+                <li className="mob-nav-item">
+                  <a className="mob-nav-link" href="#about" onClick={() => setIsOpen(false)}>About Me</a>
+                </li>
+                <li className="mob-nav-item">
+                  <a className="mob-nav-link" href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
+                </li>
+                <li className="mob-nav-item">
+                  <a className="mob-nav-link" href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+                </li>
+               </ul>
+            </motion.div>
+        </motion.div>
     )
 }
