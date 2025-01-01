@@ -17,9 +17,9 @@ export default function Home() {
 return (
     <section className="home" id="home">
       <div className="home-content">
-        <motion.h1 variants={textAnimation} initial='hidden' animate='visible' custom={1}>Hi, It's <span>Anastasia</span></motion.h1>
-        <motion.h3 custom={2} variants={textAnimation} initial='hidden' animate='visible' >I'm a&nbsp;<span>Full-Stack Developer</span></motion.h3>
-        <motion.p custom={3} variants={textAnimation} initial='hidden' animate='visible'>
+        <motion.h1 variants={textAnimation} initial='hidden' animate='visible' custom={2}>Hi, It's <span>Anastasia</span></motion.h1>
+        <motion.h3 custom={3} variants={textAnimation} initial='hidden' animate='visible' >I'm a&nbsp;<span>Full-Stack Developer</span></motion.h3>
+        <motion.p custom={4} variants={textAnimation} initial='hidden' animate='visible'>
           Inspired and detail-oriented Front-End Developer skilled in HTML, CSS,
           JavaScript, and React. I specialize in creating user-friendly web
           development projects with a focus on Agile/Scrum and value teamwork,
@@ -43,9 +43,9 @@ return (
           <a href="#contact" className="button">Contact</a>
         </div>
       </div>
-      <div className="home-img">
+      <motion.div className="home-img" variants={textAnimation} initial='hidden' animate='visible' custom={1}>
         <img src="/img/home-img.jpg" alt="Anastasia Yerashova" />
-      </div>
+      </motion.div>
     </section>
     )
 }
