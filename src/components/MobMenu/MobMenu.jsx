@@ -18,21 +18,17 @@ const variantsMenu = {
     opacity: 0,
   },
   animate: {
-    x: 0, 
+    x: '70%', 
     opacity: 1,
     transition: {
-    type: "tween", 
     duration: 0.05, 
-    ease: "linear", 
     },
   },
   exit: {
     x: "100%", 
     opacity: 0,
-    transition: {
-      type: "tween", 
+    transition: { 
       duration: 0.05,
-      ease: "linear",
     },
   },
 };
