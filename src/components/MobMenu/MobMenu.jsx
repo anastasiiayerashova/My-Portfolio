@@ -36,15 +36,10 @@ const variantsMenu = {
 export default function MobMenu({ isOpen, setIsOpen }) {
 
     return (
-        <motion.div className={`mob-menu-overlay ${isOpen ? "active" : ""}`} onClick={() => setIsOpen(false)}
-            variants={variantsOverlay}
-            initial='initial'
-            animate="animate"
-            exit="exit">
-            <motion.div className={`mob-menu ${isOpen ? "active" : ""}`} id="mobile-menu" onClick={(e) => e.stopPropagation()}
-                variants={variantsMenu} initial='initial'
-                animate='animate'
-                exit='exit'>
+        <div className={`mob-menu-overlay ${isOpen ? "active" : ""}`} onClick={() => setIsOpen(false)}
+            >
+            <div className={`mob-menu ${isOpen ? "active" : ""}`} id="mobile-menu" onClick={(e) => e.stopPropagation()}
+                >
                <nav className="mob-menu-nav">
                     <a href="#home" className="logo logo-mob">Anastasia&nbsp;<span>Yerashova</span></a>
                     <button className="mob-menu-close-btn" id="menu-close-btn" onClick={() => setIsOpen(false)}>
@@ -65,7 +60,7 @@ export default function MobMenu({ isOpen, setIsOpen }) {
                   <a className="mob-nav-link" href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
                 </li>
                </ul>
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 }
