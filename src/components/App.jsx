@@ -11,6 +11,7 @@ import Footer from './Footer/Footer'
 import MobMenu from './MobMenu/MobMenu'
 import { AnimatePresence } from 'framer-motion'
 import Modal from './Modal/Modal'
+import { use } from 'react'
 
 export default function App() {
   const [data, setData] = useState([])
@@ -27,6 +28,18 @@ export default function App() {
     }
     fetchData()
   }, [])
+
+   useEffect(() => {
+    if (isOpen) {
+      document.documentElement.classList.add("no-scroll"); 
+    } else {
+      document.documentElement.classList.remove("no-scroll"); 
+    }
+
+    return () => {
+      document.documentElement.classList.remove("no-scroll");
+    };
+  }, [isOpen]);
 
   if (!data.length) return null
   

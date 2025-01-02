@@ -458,12 +458,14 @@ section {
   visibility: hidden;
   transition: opacity 450ms ease, visibility 450ms ease;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .mob-menu-overlay.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  overflow: hidden;
 }
 
 .mob-menu {
@@ -482,6 +484,7 @@ section {
   pointer-events: none;
   transform: translateX(100%);
   transition: transform 450ms ease, opacity 450ms ease, visibility 450ms ease;
+  overflow: hidden;
 }
 
 .mob-open-btn {
@@ -498,6 +501,7 @@ section {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  overflow: hidden;
 }
 
 .mob-nav-list {
@@ -516,7 +520,7 @@ section {
 .mob-nav-link {
   transition: color 0.3s ease;
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   color: white;
 }
 
