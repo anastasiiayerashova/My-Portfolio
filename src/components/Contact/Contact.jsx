@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Formik, Form, Field, ErrorMessage, useFormikContext } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
+import { createRequest } from "../../api.js";
 
 const variants = {
     visible: (custom) => ({
@@ -22,11 +23,12 @@ export default function Contact({handleOpenModal}) {
     }
 
     const FeedbackScheme = Yup.object().shape({
-    email: Yup.string().email('Invalid email format').required('Required'),
-    message: Yup.string().min(3, 'Too Short!').max(50, 'Too Long!')
+    email: Yup.string().min(3, 'Too Short!').max(40, 'Too Long!').email('Invalid email format').required('Required'),
+    message: Yup.string().min(3, 'Too Short!').required('Required')
     })
     
-    const handleSubmit = (values, actions) => {
+  const handleSubmit = async (values, actions) => {
+        await createRequest(values)
         actions.resetForm()
     }
 
