@@ -23,6 +23,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await getData()
+      console.log(response)
       setData(response)
     }
     fetchData()
@@ -40,8 +41,8 @@ export default function App() {
     };
   }, [isOpen]);
 
-  if (!data.length) return null
-  
+  // if (!data.length) return null
+
     return (
         <>
         <Header setIsOpen={setIsOpen} />
@@ -51,7 +52,7 @@ export default function App() {
         <Home />
         <About />
         <Services />
-        <Projects data={data} />
+        <Projects data={data}/>
         <Contact handleOpenModal={handleOpenModal} />
         <Footer />
         {showModal && <Modal handleCloseModal={handleCloseModal} />}

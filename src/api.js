@@ -7,7 +7,7 @@ const backendApi = axios.create({
 export const getData = async () => {
     try {
         const { data } = await backendApi.get('/projects')
-        return data
+        return data.data
     }
     catch (e) {
         console.log(e.message)
