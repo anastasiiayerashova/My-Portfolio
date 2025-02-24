@@ -11,7 +11,6 @@ import Footer from './Footer/Footer'
 import MobMenu from './MobMenu/MobMenu'
 import { AnimatePresence } from 'framer-motion'
 import Modal from './Modal/Modal'
-import { use } from 'react'
 
 export default function App() {
   const [data, setData] = useState([])

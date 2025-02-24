@@ -1,9 +1,7 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://674a04be8680202966337092.mockapi.io/'
-
 const backendApi = axios.create({
-    baseURL: 'https://portfolio-backend-9vv7.onrender.com'
+    baseURL: 'https://portfolio-backend-1-8rgl.onrender.com'
 })
 
 export const getData = async () => {
