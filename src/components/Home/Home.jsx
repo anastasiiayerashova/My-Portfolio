@@ -20,8 +20,8 @@ return (
         <motion.h1 variants={textAnimation} initial='hidden' animate='visible' custom={2}>Hi, It's <span>Anastasia</span></motion.h1>
         <motion.h3 custom={3} variants={textAnimation} initial='hidden' animate='visible' >I'm a&nbsp;<span>Full-Stack Developer</span></motion.h3>
         <motion.p custom={4} variants={textAnimation} initial='hidden' animate='visible'>
-          Inspired and detail-oriented Front-End Developer skilled in HTML, CSS,
-          JavaScript, and React. I specialize in creating user-friendly web
+          Inspired and detail-oriented Full-Stack Developer skilled in React, JavaScript, Node.js, HTML5 and CSS3.
+          I specialize in creating user-friendly web
           development projects with a focus on Agile/Scrum and value teamwork,
           adaptability, and continuous learning. A fast learner and
           problem-solver, I am committed to delivering impactful and efficient

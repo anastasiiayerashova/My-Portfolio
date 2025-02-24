@@ -8,8 +8,8 @@ return (
                <use href="/img/icons.svg#icon-close"></use>
               </svg>
             </button>
-            <h3 className="work-modal-title">thank you for your interest in cooperation!</h3>
-            <p className="work-modal-text">The manager will contact you shortly to discuss further details and
+            <h3 className="work-modal-title">Thank you for your interest in cooperation!</h3>
+            <p className="work-modal-text">I will contact you shortly to discuss further details and
              opportunities for cooperation. Please stay in touch</p>
         </div>
     </div>

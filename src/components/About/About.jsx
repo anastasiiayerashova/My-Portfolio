@@ -13,8 +13,8 @@ export default function About() {
       <motion.div className="about-content" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: 'easeOut' }}>
         <h2>About <span>Me</span></h2>
         <p>
-          Motivated and detail-driven Front-End Developer with
-          expertise in React, Redux, JavaScript, HTML5, and CSS3.
+          Motivated and detail-driven Full-Stack Developer with
+          expertise in Node.js, Express.js, React, JavaScript, HTML5, and CSS3.
           I emphasize Agile/Scrum methodologies and prioritize teamwork,
           flexibility, and ongoing development. Throughout my education,
           I contributed to team projects, honing my skills in organization, communication, and collaboration.
