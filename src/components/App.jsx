@@ -13,6 +13,7 @@ import { AnimatePresence } from 'framer-motion'
 import Modal from './Modal/Modal'
 import TechSkills from './TechSkills/TechSkills.jsx'
 import SplashCoursor from '../blocks/Animations/SplashCursor/SplashCursor.jsx'
+import Loader from './Loader/Loader.jsx'
 
 export default function App() {
   const [data, setData] = useState([])
@@ -25,7 +26,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await getData()
-      console.log(response)
+      console.log('data', response)
       setData(response)
     }
     fetchData()
