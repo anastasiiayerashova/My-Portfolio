@@ -1,4 +1,3 @@
-import Threads from '../../blocks/Backgrounds/Threads/Threads.jsx'
 import InfiniteScroll from '../../blocks/Components/InfiniteScroll/InfiniteScroll.jsx'
 
 const TechSkills = () => {
@@ -17,7 +16,7 @@ const TechSkills = () => {
         <section>
             <h2 className="heading">Tech Skills</h2>
             <div style={{height: '800px', marginTop: '10rem', position: 'relative'}}>
-                <InfiniteScroll items={items} isTilted={true} tiltDirection='left' autoplay={true} autoplaySpeed={3} autoplayDirection="down" pauseOnHover={true}/>
+                <InfiniteScroll items={items} isTilted={true} tiltDirection='left' autoplay={true} autoplaySpeed={4} autoplayDirection="down" pauseOnHover={true}/>
             </div>
         </section>
     )
