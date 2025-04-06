@@ -14,6 +14,7 @@
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
     "framer-motion": "^11.15.0",
+    "gsap": "^3.12.7",
     "modern-normalize": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

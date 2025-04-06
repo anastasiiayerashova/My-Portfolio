@@ -11,6 +11,8 @@ import Footer from './Footer/Footer'
 import MobMenu from './MobMenu/MobMenu'
 import { AnimatePresence } from 'framer-motion'
 import Modal from './Modal/Modal'
+import TechSkills from './TechSkills/TechSkills.jsx'
+import SplashCoursor from '../blocks/Animations/SplashCursor/SplashCursor.jsx'
 
 export default function App() {
   const [data, setData] = useState([])
@@ -44,13 +46,15 @@ export default function App() {
   // if (!data.length) return null
 
     return (
-        <>
+      <>
+        <SplashCoursor/>
         <Header setIsOpen={setIsOpen} />
         <AnimatePresence>
           {isOpen && <MobMenu setIsOpen={setIsOpen} isOpen={isOpen} />}
           </AnimatePresence>
         <Home />
         <About />
+        <TechSkills/>
         <Services />
         <Projects data={data}/>
         <Contact handleOpenModal={handleOpenModal} />
